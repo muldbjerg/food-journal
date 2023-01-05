@@ -1,0 +1,19 @@
+<input type="text" [(ngModel)]="this.foodItem" />
+<button (click)="this.saveItem()">Save</button>
+
+<!-- {{ this.allFood | json }} -->
+
+<div *ngFor="let item of this.allFood"></div>
+
+<div *ngFor="let item of this.allFood">
+  <h2>{{ this.item.item }}</h2>
+  {{ this.item.timestamp | date }}
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<button class="nav-link" (click)="authService.SignOut()">
+  <i class="fas fa-sign-out-alt"></i>Log out
+</button>

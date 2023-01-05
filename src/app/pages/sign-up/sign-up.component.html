@@ -1,0 +1,29 @@
+<h3>Sign Up</h3>
+<input
+  type="email"
+  class="formControl"
+  placeholder="Email Address"
+  #userEmail
+  required
+/>
+
+<input
+  type="password"
+  class="formControl"
+  placeholder="Password"
+  #userPwd
+  required
+/>
+<input
+  type="button"
+  class="btn btnPrimary"
+  value="Sign Up"
+  (click)="authService.SignUp(userEmail.value, userPwd.value)"
+/>
+
+<div class="redirectToLogin">
+  <span
+    >Already have an account?
+    <span class="redirect" routerLink="/sign-in">Log In</span></span
+  >
+</div>
