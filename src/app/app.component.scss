@@ -8,12 +8,63 @@
     font-size: 0.688rem;
     font-weight: normal;
     text-align: center;
-    padding: 24px 0;
+
+    button {
+      padding: 24px;
+      border: none;
+      background: transparent;
+    }
   }
 
   main {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  .main-nav {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    // background-color: #fff;
+    padding: 160px 0 40px 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(185, 202, 223, 0) 0%,
+      rgba(185, 202, 223, 0) 10%,
+      rgba(185, 202, 223, 0.6) 50%
+    );
+    backdrop-filter: blur(8px);
+    z-index: 2;
+
+    .button {
+      margin: 0 auto;
+    }
+
+    p {
+      margin-top: 16px;
+      color: #e8edf4;
+
+      a {
+        color: #e8edf4;
+        text-underline-offset: 2px;
+      }
+    }
+  }
+
+  .underlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 1;
   }
 }

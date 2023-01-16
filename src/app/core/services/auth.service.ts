@@ -108,6 +108,7 @@ export class AuthService {
     };
     return userRef.set(userData);
   }
+
   // Sign out
   SignOut() {
     return this.afAuth.signOut().then(() => {

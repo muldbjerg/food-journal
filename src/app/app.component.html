@@ -1,7 +1,24 @@
 <div class="main-app">
-  <h1 class="branding">Food journal</h1>
+  <h1 class="branding">
+    <button (click)="this.showMenu = !this.showMenu">Food journal</button>
+  </h1>
 
   <main>
     <router-outlet></router-outlet>
   </main>
+
+  <div
+    *ngIf="this.showMenu"
+    class="underlay"
+    (click)="this.showMenu = false"
+  ></div>
+  <nav *ngIf="this.showMenu" class="main-nav">
+    <button class="button" (click)="this.signOut()">Sign out</button>
+    <p>
+      Food journal by
+      <a href="https://muldbjerg.com" target="_blank" rel="noopener noreferrer"
+        >muldbjerg.com</a
+      >
+    </p>
+  </nav>
 </div>

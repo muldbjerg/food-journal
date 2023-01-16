@@ -28,6 +28,16 @@
       outline: none;
     }
   }
+
+  .journal-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #294fa0;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .button {
