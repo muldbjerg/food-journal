@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+// FONTS
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url("/assets/fonts/inter-regular.ttf") format("truetype");
+}
+
+:root {
+  --dark-blue: #14274f;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", sans-serif;
+  font-size: 100%;
+  color: var(--dark-blue);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  padding: 12px 20px;
+  min-width: 246px;
+  background: var(--dark-blue);
+  border-radius: 16px;
+  border: none;
+  color: #fff;
+}

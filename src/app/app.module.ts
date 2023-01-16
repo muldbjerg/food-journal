@@ -16,6 +16,10 @@ import { VerifyEmailComponent } from './pages/verify-email/verify-email.componen
 import { AddComponent } from './pages/add/add.component';
 import { AuthService } from './core/services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { SortDatePipe } from './core/pipes/sort-date.pipe';
+import { JournalComponent } from './pages/journal/journal.component';
+import { DayPipe } from './core/pipes/day.pipe';
+import { EditComponent } from './pages/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { FormsModule } from '@angular/forms';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     AddComponent,
+    SortDatePipe,
+    JournalComponent,
+    DayPipe,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

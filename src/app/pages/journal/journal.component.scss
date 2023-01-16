@@ -1,0 +1,39 @@
+.day-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  margin-top: 16px;
+
+  .header {
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: space-between;
+
+    .header-date {
+      color: #697a9d;
+    }
+  }
+
+  .item-list {
+    margin-top: 16px;
+
+    .item {
+      font-size: 1.375rem;
+      line-height: 1.1;
+      padding: 4px 0;
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0px;
+  }
+}
+
+.button {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,39 @@
+.adding {
+  .header {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1.5px);
+    padding: 16px 24px;
+    color: #697a9d;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  textarea {
+    width: 100%;
+    height: calc(100vh - 220px);
+    border: none;
+    padding: 0 16px;
+    background: transparent;
+    text-align: center;
+    font-size: 3.125rem;
+    vertical-align: middle;
+    caret-color: #7596dc;
+    margin-top: 32px;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}

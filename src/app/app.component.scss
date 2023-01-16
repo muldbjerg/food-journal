@@ -1,0 +1,19 @@
+.main-app {
+  background-image: url("/assets/images/bg-3.svg");
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+
+  .branding {
+    font-size: 0.688rem;
+    font-weight: normal;
+    text-align: center;
+    padding: 24px 0;
+  }
+
+  main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { map } from 'rxjs';
+import { map, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ItemsService } from 'src/app/core/services/items.service';
 
@@ -9,11 +15,13 @@ import { ItemsService } from 'src/app/core/services/items.service';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
 })
-export class AddComponent implements OnInit {
+export class AddComponent implements OnInit, OnDestroy {
+  @ViewChild('input') input!: ElementRef;
+
+  subscriptions = new Subscription();
   foodItem: string = '';
   userUid?: string;
-
-  allFood: any;
+  today = new Date().getTime();
 
   constructor(
     public authService: AuthService,
@@ -23,35 +31,36 @@ export class AddComponent implements OnInit {
 
   async ngOnInit() {
     if (localStorage.getItem('user')) {
-      this.userUid = JSON.parse(localStorage.getItem('user')!)['uid'];
-
-      var allFoodQuery = this.db
-        .object(`entries/${this.userUid}`)
-        .valueChanges();
-
-      if (typeof allFoodQuery === 'object') {
-        allFoodQuery
-          .pipe(
-            map((query: any) => {
-              if (query) {
-                return Object.values(query);
-              } else {
-                return;
-              }
-            })
-          )
-          .subscribe((items: any) => {
-            console.log(items);
-            this.allFood = items;
-          });
-      }
     }
+
+    setTimeout(() => {
+      this.input.nativeElement.focus();
+    }, 0);
   }
 
-  saveItem() {
-    var entriesRef = this.db.object(
-      `entries/${this.userUid}/${this.db.createPushId()}`
-    );
-    entriesRef.set({ item: this.foodItem, timestamp: new Date().getTime() });
+  ngOnDestroy() {
+    this.subscriptions.unsubscribe();
+  }
+
+  saveNewItem(event: any) {
+    event.preventDefault();
+
+    if (this.foodItem === '') {
+      console.log('no content');
+      return;
+    }
+
+    this.userUid = JSON.parse(localStorage.getItem('user')!)['uid'];
+    var key = this.db.createPushId();
+
+    var entriesRef = this.db.object(`entries/${this.userUid}/${key}`);
+    entriesRef.set({
+      item: this.foodItem,
+      timestamp: new Date().getTime(),
+      key: key,
+    });
+
+    this.foodItem = '';
+    this.input.nativeElement.focus();
   }
 }

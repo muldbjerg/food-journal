@@ -1,0 +1,19 @@
+<ng-container *ngIf="this.itemsByDate">
+  <div *ngFor="let day of this.itemsByDate | sortDate" class="day-card">
+    <div class="header">
+      <div class="header-day">
+        {{ day[0].timestamp | date : "EEEE" }}
+      </div>
+      <div class="header-date">
+        {{ day[0].timestamp | date }}
+      </div>
+    </div>
+    <div class="item-list">
+      <div *ngFor="let item of day" class="item">
+        <p>{{ item.item }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<a class="button" routerLink="/add">Add</a>

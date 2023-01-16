@@ -1,19 +1,21 @@
-<input type="text" [(ngModel)]="this.foodItem" />
-<button (click)="this.saveItem()">Save</button>
+<div class="adding">
+  <div class="header">
+    <div>
+      <div>
+        {{ this.today | date : "EEEE" }}
+      </div>
+      <div>
+        {{ this.today.toString() | date }}
+      </div>
+      <p></p>
+    </div>
+    <div><a routerLink="/journal">Menu</a></div>
+  </div>
+  <textarea
+    (keydown.enter)="this.saveNewItem($event)"
+    [(ngModel)]="this.foodItem"
+    #input
+  ></textarea>
 
-<!-- {{ this.allFood | json }} -->
-
-<div *ngFor="let item of this.allFood"></div>
-
-<div *ngFor="let item of this.allFood">
-  <h2>{{ this.item.item }}</h2>
-  {{ this.item.timestamp | date }}
+  <button class="button" (click)="this.saveNewItem($event)">Save</button>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<button class="nav-link" (click)="authService.SignOut()">
-  <i class="fas fa-sign-out-alt"></i>Log out
-</button>
