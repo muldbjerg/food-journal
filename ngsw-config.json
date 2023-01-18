@@ -24,6 +24,16 @@
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
+    }, {
+      "name": "firebase",
+      "version": 1,
+      "urls": ["https://food-journal-prod-default-rtdb.europe-west1.firebasedatabase.app"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "20s",
+        "timeout": "3s"
+      }
     }
   ]
 }
