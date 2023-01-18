@@ -43,6 +43,9 @@ import { EditComponent } from './pages/edit/edit.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
