@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
