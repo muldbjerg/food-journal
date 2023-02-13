@@ -22,6 +22,7 @@ export class AddComponent implements OnInit, OnDestroy {
   foodItem: string = '';
   userUid?: string;
   today = new Date().getTime();
+  showFeedback = false;
 
   constructor(
     public authService: AuthService,
@@ -60,7 +61,17 @@ export class AddComponent implements OnInit, OnDestroy {
       key: key,
     });
 
+    this.showFeedbackNow();
+
     this.foodItem = '';
     this.input.nativeElement.focus();
+  }
+
+  showFeedbackNow() {
+    this.showFeedback = true;
+
+    setTimeout(() => {
+      this.showFeedback = false;
+    }, 2000);
   }
 }
