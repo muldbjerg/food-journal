@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="item-list">
-      <div *ngFor="let item of day" class="item">
+      <div *ngFor="let item of day | reverse" class="item">
         <p>{{ item.item }}</p>
       </div>
     </div>

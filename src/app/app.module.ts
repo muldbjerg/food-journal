@@ -21,6 +21,7 @@ import { SortDatePipe } from './core/pipes/sort-date.pipe';
 import { JournalComponent } from './pages/journal/journal.component';
 import { DayPipe } from './core/pipes/day.pipe';
 import { EditComponent } from './pages/edit/edit.component';
+import { ReversePipe } from './core/pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { EditComponent } from './pages/edit/edit.component';
     JournalComponent,
     DayPipe,
     EditComponent,
+    ReversePipe,
   ],
   imports: [
     BrowserModule,
